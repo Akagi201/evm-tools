@@ -2,4 +2,6 @@
 members = [
   "event-watcher",
   "tx-watcher",
+  "tx-sender",
+  "gen-keys",
 ]
