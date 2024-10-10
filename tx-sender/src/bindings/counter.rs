@@ -18,41 +18,57 @@ pub mod counter {
                 (
                     ::std::borrow::ToOwned::to_owned("increment"),
                     ::std::vec![
-                        ::ethers::core::abi::ethabi::Function { name :
-                        ::std::borrow::ToOwned::to_owned("increment"), inputs :
-                        ::std::vec![], outputs : ::std::vec![], constant :
-                        ::core::option::Option::None, state_mutability :
-                        ::ethers::core::abi::ethabi::StateMutability::NonPayable, }
+                        ::ethers::core::abi::ethabi::Function {
+                            name: ::std::borrow::ToOwned::to_owned("increment"),
+                            inputs: ::std::vec![],
+                            outputs: ::std::vec![],
+                            constant: ::core::option::Option::None,
+                            state_mutability: ::ethers::core::abi::ethabi::StateMutability::NonPayable,
+                        },
                     ],
                 ),
                 (
                     ::std::borrow::ToOwned::to_owned("number"),
                     ::std::vec![
-                        ::ethers::core::abi::ethabi::Function { name :
-                        ::std::borrow::ToOwned::to_owned("number"), inputs :
-                        ::std::vec![], outputs :
-                        ::std::vec![::ethers::core::abi::ethabi::Param { name :
-                        ::std::string::String::new(), kind :
-                        ::ethers::core::abi::ethabi::ParamType::Uint(256usize),
-                        internal_type :
-                        ::core::option::Option::Some(::std::borrow::ToOwned::to_owned("uint256")),
-                        }], constant : ::core::option::Option::None, state_mutability :
-                        ::ethers::core::abi::ethabi::StateMutability::View, }
+                        ::ethers::core::abi::ethabi::Function {
+                            name: ::std::borrow::ToOwned::to_owned("number"),
+                            inputs: ::std::vec![],
+                            outputs: ::std::vec![
+                                ::ethers::core::abi::ethabi::Param {
+                                    name: ::std::string::String::new(),
+                                    kind: ::ethers::core::abi::ethabi::ParamType::Uint(
+                                        256usize,
+                                    ),
+                                    internal_type: ::core::option::Option::Some(
+                                        ::std::borrow::ToOwned::to_owned("uint256"),
+                                    ),
+                                },
+                            ],
+                            constant: ::core::option::Option::None,
+                            state_mutability: ::ethers::core::abi::ethabi::StateMutability::View,
+                        },
                     ],
                 ),
                 (
                     ::std::borrow::ToOwned::to_owned("setNumber"),
                     ::std::vec![
-                        ::ethers::core::abi::ethabi::Function { name :
-                        ::std::borrow::ToOwned::to_owned("setNumber"), inputs :
-                        ::std::vec![::ethers::core::abi::ethabi::Param { name :
-                        ::std::borrow::ToOwned::to_owned("newNumber"), kind :
-                        ::ethers::core::abi::ethabi::ParamType::Uint(256usize),
-                        internal_type :
-                        ::core::option::Option::Some(::std::borrow::ToOwned::to_owned("uint256")),
-                        }], outputs : ::std::vec![], constant :
-                        ::core::option::Option::None, state_mutability :
-                        ::ethers::core::abi::ethabi::StateMutability::NonPayable, }
+                        ::ethers::core::abi::ethabi::Function {
+                            name: ::std::borrow::ToOwned::to_owned("setNumber"),
+                            inputs: ::std::vec![
+                                ::ethers::core::abi::ethabi::Param {
+                                    name: ::std::borrow::ToOwned::to_owned("newNumber"),
+                                    kind: ::ethers::core::abi::ethabi::ParamType::Uint(
+                                        256usize,
+                                    ),
+                                    internal_type: ::core::option::Option::Some(
+                                        ::std::borrow::ToOwned::to_owned("uint256"),
+                                    ),
+                                },
+                            ],
+                            outputs: ::std::vec![],
+                            constant: ::core::option::Option::None,
+                            state_mutability: ::ethers::core::abi::ethabi::StateMutability::NonPayable,
+                        },
                     ],
                 ),
             ]),
@@ -186,16 +202,19 @@ pub mod counter {
             data: impl AsRef<[u8]>,
         ) -> ::core::result::Result<Self, ::ethers::core::abi::AbiError> {
             let data = data.as_ref();
-            if let Ok(decoded)
-                = <IncrementCall as ::ethers::core::abi::AbiDecode>::decode(data) {
+            if let Ok(decoded) = <IncrementCall as ::ethers::core::abi::AbiDecode>::decode(
+                data,
+            ) {
                 return Ok(Self::Increment(decoded));
             }
-            if let Ok(decoded)
-                = <NumberCall as ::ethers::core::abi::AbiDecode>::decode(data) {
+            if let Ok(decoded) = <NumberCall as ::ethers::core::abi::AbiDecode>::decode(
+                data,
+            ) {
                 return Ok(Self::Number(decoded));
             }
-            if let Ok(decoded)
-                = <SetNumberCall as ::ethers::core::abi::AbiDecode>::decode(data) {
+            if let Ok(decoded) = <SetNumberCall as ::ethers::core::abi::AbiDecode>::decode(
+                data,
+            ) {
                 return Ok(Self::SetNumber(decoded));
             }
             Err(::ethers::core::abi::Error::InvalidData.into())

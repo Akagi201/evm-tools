@@ -1,0 +1,9 @@
+[package]
+name = "gen-bls-key"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+blst = "0.3.13"
+hex = "0.4.3"
+rand = "0.8.5"

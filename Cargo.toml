@@ -4,4 +4,6 @@ members = [
   "tx-watcher",
   "tx-sender",
   "gen-keys",
+  "gen-bls-key",
 ]
+resolver = "2"
