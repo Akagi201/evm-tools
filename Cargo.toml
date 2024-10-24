@@ -1,9 +1,18 @@
 [workspace]
 members = [
-  "event-watcher",
-  "tx-watcher",
-  "tx-sender",
-  "gen-keys",
+  "block-watcher",
+  "contract-call",
   "gen-bls-key",
+  "gen-ecdsa-key",
+  "mempool-watcher",
 ]
 resolver = "2"
+
+[workspace.dependencies]
+alloy = "0.5.4"
+hex = "0.4.3"
+eyre = "0.6.12"
+tokio = "1.41.0"
+futures-util = "0.3.31"
+blst = "0.3.13"
+rand = "0.8.5"

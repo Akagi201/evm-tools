@@ -1,11 +1,10 @@
 [package]
-name = "event-watcher"
+name = "gen-ecdsa-key"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.89"
-ethers = { version = "2.0.14", features = ["ws"] }
-tokio = { version = "1.40.0", features = ["full"] }
+alloy = { workspace = true, features = ["full"] }
+hex = { workspace = true }
