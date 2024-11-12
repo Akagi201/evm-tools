@@ -1,0 +1,9 @@
+[package]
+name = "gen-raw-tx"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eyre = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+alloy = { workspace = true, features = ["full", "node-bindings", "rlp"] }
